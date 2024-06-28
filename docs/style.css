@@ -1,0 +1,362 @@
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* Common */
+
+@font-face {
+    font-family: "ArchitectsDaughter";
+    src: url("ArchitectsDaughter.ttf"), "Comic Sans MS", sans-serif;
+}
+
+:root {
+    --the-green: #01fe8b;
+    --the-light: #ceffd5;
+    --the-dark: rgb(17, 134, 32); /* It hurts you */
+    --the-darker: rgb(7, 66, 15);
+    --font-muted: rgb(100, 100, 100);
+    --error-color: #e26f88;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: linear-gradient(201deg, var(--the-light) 0%, var(--the-green) 74%);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.center-image {
+    display: flex;
+    justify-content: center;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* Polkadot background */
+
+.polkadot-bg {
+    background-image: linear-gradient(201deg, var(--the-light) 0%, var(--the-green) 74%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.polkadot-bg-inner {
+    background-image: url("img/circle.png");
+    background-repeat: repeat;
+    position: absolute;
+    top: -100vh;
+    left: -100vw;
+    bottom: -100vh;
+    right: -100vw;
+    transform: rotateZ(10deg);
+
+    animation-name: polkadot-anim;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes polkadot-anim {
+    0% {
+        transform: rotateZ(10deg) translate(0, 0);
+    }
+
+    100% {
+        transform: rotateZ(10deg) translate(-80px, 80px);
+    }
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* Main content layout */
+
+.main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    /* Show above background. */
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 1450px;
+
+    gap: 48px;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* Profile info */
+
+.profile {
+    border-radius: 12px;
+    /* filter: drop-shadow(0 0 10px var(--the-dark)); */
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+
+    max-width: 240px;
+    margin-top: 120px;
+}
+
+.pfp-img-container {
+    position: relative;
+}
+
+.pfp-img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-top: -120px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.pfp-img-surprised {
+    user-select: none;
+    display: none;
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    width: 50px;
+    opacity: 1;
+}
+
+.pfp-img-container:hover .pfp-img-surprised,
+.pfp-img-container:active .pfp-img-surprised {
+    display: block;
+    animation-name: surprise-anim;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes surprise-anim {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.bounce-hover:hover,
+.bounce-active:active {
+    animation-name: bounce-anim;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes bounce-anim {
+    0% {
+        transform: none;
+    }
+    50% {
+        transform: scaleX(0.75) scaleY(1.2) translateY(-8px);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+.signature-img {
+    margin-top: 24px;
+    filter: drop-shadow(4px 4px 1px white) drop-shadow(-4px -4px 1px white);
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* Gallery */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 32px;
+    width: 600px;
+    margin-top: 120px;
+    /* Compensate for images in the gallery being -50px margin-left, and also cropped on the side */
+    margin-right: -96px;
+}
+
+.gallery-img {
+    width: 200px;
+    height: 200px;
+    clip-path: url("#blade-clip");
+    margin-left: -50px;
+
+    transition: transform 0.1s ease;
+}
+
+.gallery-img:hover {
+    transform: translateX(5px) translateY(-10px) scale(1.1);
+}
+
+.gallery > .gallery-img:first-child {
+    margin-left: 0;
+}
+
+.gallery > .gallery-img:nth-child(4) {
+    margin-left: 0;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////// */
+/* Character pricing */
+
+.character-price {
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.character-container {
+    position: relative;
+    width: 250px;
+    aspect-ratio: 1215 / 2148;
+}
+
+.character {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.character-hidden {
+    position: relative;
+    z-index: 1;
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+
+.character-visible-container {
+    aspect-ratio: 1215 / 2148;
+    z-index: 2;
+}
+
+.character-visible {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+
+    transition: height 0.1s ease;
+}
+
+.dragger {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    border-top-color: gray;
+    border-top-width: 2px;
+    border-top-style: dashed;
+
+    display: flex;
+    justify-content: center;
+}
+
+.dragger-handle {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    margin-top: -22px;
+
+    cursor: move;
+    background-color: rgba(200, 200, 200, 0.85);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(128, 128, 128);
+}
+
+.dragger-handle:hover {
+    background-color: rgba(170, 170, 170, 0.85);
+}
+
+.character-version-selector-container {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.character-version-selector {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 0;
+    display: block;
+}
+
+.character-version-selector-half {
+    width: 40px;
+    height: 20px;
+    border-radius: 40px 40px 0 0;
+    transform: rotateZ(135deg);
+    transform-origin: 50% 100%;
+}
+
+.character-version-selector.character-version-selector-bw {
+    background-color: rgb(250, 250, 250);
+}
+
+.character-version-selector-half.character-version-selector-bw {
+    background-color: rgb(120, 120, 120);
+}
+
+.character-version-selector.character-version-selector-color {
+    background-color: #f9fbe5;
+}
+
+.character-version-selector-half.character-version-selector-color {
+    background-color: #f4cb80;
+}
+
+.character-version-selector-shaded {
+    background: linear-gradient(135deg, #f9fbe5 0%, #f9fbe5 35%, #f4cb80 65%, #f4cb80 100%);
+}
+
+.info-container {
+    padding-top: 32px;
+    width: 300px;
+}
+
+#character-pricing-price {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#character-pricing-name {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "ArchitectsDaughter";
+}

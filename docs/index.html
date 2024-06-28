@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="description" content="JulianDough commissions" />
+        <meta charset="utf-8" />
+        <title>Julian Dough</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="nilllzz" />
+
+        <!-- Open Graph tags -->
+        <meta property="og:site_name" content="JulianDough commissions" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content="Julian Dough" />
+        <meta
+            property="og:description"
+            content="I draw furry art, trying to make a comic but have lack motivation into starting it, I like watching YouTube tho"
+        />
+        <meta
+            property="og:image"
+            content="https://nilllzz.github.io/portfolio-juliandough/img/og_image.jpg"
+        />
+        <meta property="og:image:width" content="1000" />
+        <meta property="og:image:height" content="540" />
+        <meta property="og:url" content="https://nilllzz.github.io/portfolio-juliandough/" />
+        <meta property="profile:username" content="juliandough" />
+
+        <!-- Twitter tags -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Julian Dough" />
+        <meta
+            property="twitter:description"
+            content="I draw furry art, trying to make a comic but have lack motivation into starting it, I like watching YouTube tho"
+        />
+        <meta property="twitter:url" content="https://nilllzz.github.io/portfolio-juliandough/" />
+        <meta
+            property="twitter:image"
+            content="https://nilllzz.github.io/portfolio-juliandough/img/og_image.jpg"
+        />
+        <meta property="twitter:site" content="@bobbycat25" />
+        <meta property="twitter:creator" content="@bobbycat25" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    </head>
+
+    <body>
+        <!-- <div class="polkadot-bg">
+            <div class="polkadot-bg-inner"></div>
+        </div> -->
+
+        <div class="main-container">
+            <main>
+                <div class="profile">
+                    <div class="pfp-img-container">
+                        <div class="center-image">
+                            <img
+                                src="img/pfp.png"
+                                class="pfp-img bounce-hover bounce-active"
+                                alt="Profile picture"
+                            />
+                        </div>
+                        <img
+                            src="img/surprised.png"
+                            class="pfp-img-surprised"
+                            alt="Surprised emote"
+                        />
+                    </div>
+
+                    <div class="center-image">
+                        <img src="img/signature.png" class="signature-img" alt="Signature" />
+                    </div>
+                </div>
+                <div class="gallery">
+                    <img src="img/gallery/1_2.jpg" class="gallery-img" data-anim-delay="0" />
+                    <img src="img/gallery/2.jpg" class="gallery-img" data-anim-delay="1" />
+                    <img src="img/gallery/3.jpg" class="gallery-img" data-anim-delay="2" />
+                    <img src="img/gallery/4.jpg" class="gallery-img" data-anim-delay="3" />
+                    <img src="img/gallery/5.jpg" class="gallery-img" data-anim-delay="4" />
+                    <img src="img/gallery/6.jpg" class="gallery-img" data-anim-delay="5" />
+
+                    <svg width="0" height="0">
+                        <defs>
+                            <clipPath id="blade-clip">
+                                <!-- This is fucked -->
+                                <polygon points="88 5, 200 5, 112 195, 0 195"></polygon>
+
+                                <circle cx="93" cy="5" r="5"></circle>
+                                <circle cx="194.75" cy="5" r="5"></circle>
+                                <polygon points="93 0, 195 0, 200 6, 88 6"></polygon>
+
+                                <circle cx="5.5" cy="195" r="5"></circle>
+                                <circle cx="107" cy="195" r="5"></circle>
+                                <polygon points="5 194, 106 194, 106 200, 5 200"></polygon>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="character-price">
+                    <div class="character-container" ondragover="handleDragOver(event)">
+                        <img
+                            src="img/character-shaded.png"
+                            id="character-hidden-img"
+                            class="character character-hidden"
+                        />
+
+                        <div class="character character-visible-container">
+                            <div class="character-visible" id="character-visible">
+                                <img
+                                    src="img/character-shaded.png"
+                                    class="character"
+                                    id="character-img"
+                                />
+                            </div>
+
+                            <div class="dragger">
+                                <div
+                                    class="dragger-handle"
+                                    id="dragger-handle"
+                                    draggable="true"
+                                    ondragstart="handleDragStart(event)"
+                                    ondragend="handleDragEnd(event)"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="character-version-selector-container"
+                            id="character-variant-selectors"
+                        >
+                            <div
+                                class="character-version-selector character-version-selector-bw"
+                                data-variant="bw"
+                                onclick="setCharacterVariant('bw')"
+                            >
+                                <div
+                                    class="character-version-selector-half character-version-selector-bw"
+                                ></div>
+                            </div>
+                            <div
+                                class="character-version-selector character-version-selector-color"
+                                data-variant="color"
+                                onclick="setCharacterVariant('color')"
+                            >
+                                <div
+                                    class="character-version-selector-half character-version-selector-color"
+                                ></div>
+                            </div>
+                            <div
+                                class="character-version-selector character-version-selector-shaded"
+                                data-variant="shaded"
+                                onclick="setCharacterVariant('shaded')"
+                            ></div>
+                        </div>
+                    </div>
+                    <div class="info-container">
+                        <div>
+                            <span id="character-pricing-price"></span>
+                        </div>
+                        <div>
+                            <span id="character-pricing-name"></span>
+                        </div>
+                        <div>
+                            <span id="character-pricing-description"></span>
+                        </div>
+                    </div>
+                </div>
+                <div>box 4</div>
+            </main>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
