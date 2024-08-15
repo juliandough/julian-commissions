@@ -228,7 +228,7 @@ const characterPricings = [
     },
     {
         name: "Full-body",
-        description: "A full-body of your character",
+        description: "A full-body of your character from head to toe",
         height: 100,
         price: 35,
     },
@@ -411,9 +411,38 @@ function setCharacterStyle(characterStyle) {
     }
 }
 
+function handleChangeCharacterMelonTax() {
+    updateCalculatorResults();
+}
+
+let emoteCount = 1;
+
+function handleEmotesAdd() {
+    emoteCount = Math.min(15, emoteCount + 1);
+    updateEmotesCount();
+    updateCalculatorResults();
+}
+
+function handleEmotesRemove() {
+    emoteCount = Math.max(1, emoteCount - 1);
+    updateEmotesCount();
+    updateCalculatorResults();
+}
+
+function updateEmotesCount() {
+    const emotesCountEl = document.getElementById("emotes-count");
+    emotesCountEl.innerText = emoteCount.toString();
+}
+
+function handleChangeEmotesMelonTax() {
+    updateCalculatorResults();
+}
+
 function updateCalculatorResults() {
     if (commissionContext === "character") {
         updateCalculatorResultsCharacter();
+    } else if (commissionContext === "emotes") {
+        updateCalculatorResultsEmotes();
     } else if (commissionContext === "something") {
         updateCalculatorResultsSomething();
     }
@@ -425,6 +454,9 @@ function updateCalculatorResultsCharacter() {
     let price = closestPricing.price;
     const surcharge = characterSurcharges[currentCharacterStyle];
     price += surcharge;
+
+    const melonTaxEl = document.getElementById("character-melon-tax");
+    price += melonTaxEl.checked ? 2 : 0;
 
     updatePriceDisplay(price);
 
@@ -440,6 +472,17 @@ function updateCalculatorResultsCharacter() {
         styleDisplay +
         ")</small><br><br>" +
         closestPricing.description;
+}
+
+function updateCalculatorResultsEmotes() {
+    let price = emoteCount * 8;
+
+    const melonTaxEl = document.getElementById("emotes-melon-tax");
+    price += melonTaxEl.checked ? 2 : 0;
+
+    updatePriceDisplay(price);
+
+    commissionDetailsEl.innerText = "";
 }
 
 function updateCalculatorResultsSomething() {

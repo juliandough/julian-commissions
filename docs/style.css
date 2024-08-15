@@ -401,6 +401,53 @@ dialog td {
     padding-right: 16px;
 }
 
+input[type="checkbox"] {
+    appearance: none;
+    background-color: var(--bg-color);
+    margin: 0;
+    font: inherit;
+
+    position: relative;
+
+    width: 1.15em;
+    height: 1.15em;
+    border: 3px solid var(--font-color);
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: background-color 0.1s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked::before {
+    content: "✓";
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9em;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(1px, 0.15em) solid var(--font-color-muted);
+    outline-offset: max(1px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+    background-color: var(--font-color-muted);
+}
+
+.checkboxLabel {
+    cursor: pointer;
+}
+
 /* ------------------------------------------------------------------------------------- */
 /*#region Header*/
 
@@ -1140,6 +1187,31 @@ footer a {
 
 .characterStyleBtn.color .characterStyleBtnHalf {
     background-color: #f4cb80;
+}
+
+.melonTax > * {
+    vertical-align: middle;
+}
+
+/* Emotes: */
+
+.emotesFormContent.active {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.emoteCount {
+    background-color: var(--font-color);
+    color: var(--bg-color);
+    border-radius: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 /* Results: */

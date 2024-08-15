@@ -310,10 +310,45 @@
                                     ></button>
                                 </div>
 
-                                <div class="characterFormSeparator"></div>
+                                <div class="melonTax">
+                                    <input
+                                        type="checkbox"
+                                        id="character-melon-tax"
+                                        onchange="handleChangeCharacterMelonTax()"
+                                    />
+                                    <label class="checkboxLabel" for="character-melon-tax"
+                                        >Melon Tax ?</label
+                                    >
+                                    <small>Add your character on a melon</small>
+                                </div>
                             </div>
                             <!-- Emotes -->
-                            <div class="calcFormContent" data-context="emotes">Emotes</div>
+                            <div class="calcFormContent emotesFormContent" data-context="emotes">
+                                <div>
+                                    <div>How many emotes?</div>
+                                    <div>
+                                        <button class="btn btnIcon" onclick="handleEmotesRemove()">
+                                            <i class="bi bi-dash-lg"></i>
+                                        </button>
+                                        <span class="emoteCount" id="emotes-count">1</span>
+                                        <button class="btn btnIcon" onclick="handleEmotesAdd()">
+                                            <i class="bi bi-plus-lg"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="melonTax">
+                                    <input
+                                        type="checkbox"
+                                        id="emotes-melon-tax"
+                                        onchange="handleChangeEmotesMelonTax()"
+                                    />
+                                    <label class="checkboxLabel" for="emotes-melon-tax"
+                                        >Melon Tax ?</label
+                                    >
+                                    <small>Add your character on a melon</small>
+                                </div>
+                            </div>
                             <!-- "Something else" -->
                             <div class="calcFormContent" data-context="something">
                                 <!-- Poetry time -->
@@ -370,9 +405,23 @@ In a world where furries rule the night!
 
                             <div style="margin-bottom: 12px">Contact me:</div>
                             <div class="calcControls">
-                                <a class="btn"><i class="bi bi-discord"></i>Discord</a>
-                                <a class="btn"><i class="bi bi-twitter"></i>Twitter</a>
-                                <a class="btn"> <i class="bi bi-envelope-fill"></i>Email </a>
+                                <a
+                                    class="btn"
+                                    href="https://discord.com/invite/RBFkr782hm"
+                                    target="_blank"
+                                    ref="noopener noreferrer nofollow"
+                                    ><i class="bi bi-discord"></i>Discord</a
+                                >
+                                <a
+                                    class="btn"
+                                    href="https://twitter.com/bobbycat25"
+                                    target="_blank"
+                                    ref="noopener noreferrer nofollow"
+                                    ><i class="bi bi-twitter"></i>Twitter</a
+                                >
+                                <a class="btn" href="mailto:">
+                                    <i class="bi bi-envelope-fill"></i>Email
+                                </a>
                             </div>
                         </div>
                     </div>
