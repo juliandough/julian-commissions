@@ -1,43 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="description" content="JulianDough commissions" />
         <meta charset="utf-8" />
-        <title>Julian Dough</title>
+        <title>JulianDough</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="nilllzz" />
-
-        <!-- Open Graph tags -->
-        <meta property="og:site_name" content="JulianDough commissions" />
-        <meta property="og:type" content="profile" />
-        <meta property="og:title" content="Julian Dough" />
-        <meta
-            property="og:description"
-            content="I draw furry art, trying to make a comic but have lack motivation into starting it, I like watching YouTube tho"
-        />
-        <meta
-            property="og:image"
-            content="https://nilllzz.github.io/portfolio-juliandough/img/og_image.jpg"
-        />
-        <meta property="og:image:width" content="1000" />
-        <meta property="og:image:height" content="540" />
-        <meta property="og:url" content="https://nilllzz.github.io/portfolio-juliandough/" />
-        <meta property="profile:username" content="juliandough" />
-
-        <!-- Twitter tags -->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content="Julian Dough" />
-        <meta
-            property="twitter:description"
-            content="I draw furry art, trying to make a comic but have lack motivation into starting it, I like watching YouTube tho"
-        />
-        <meta property="twitter:url" content="https://nilllzz.github.io/portfolio-juliandough/" />
-        <meta
-            property="twitter:image"
-            content="https://nilllzz.github.io/portfolio-juliandough/img/og_image.jpg"
-        />
-        <meta property="twitter:site" content="@bobbycat25" />
-        <meta property="twitter:creator" content="@bobbycat25" />
 
         <link
             rel="stylesheet"
@@ -48,129 +15,627 @@
     </head>
 
     <body>
-        <!-- <div class="polkadot-bg">
-            <div class="polkadot-bg-inner"></div>
-        </div> -->
+        <header>
+            <nav>
+                <ul id="nav-list">
+                    <li class="active" data-ref="top">
+                        <a href="#top"><span>Home</span></a>
+                    </li>
+                    <li data-ref="gallery">
+                        <a href="#gallery"><span>Gallery</span></a>
+                    </li>
+                    <li data-ref="emotes">
+                        <a href="#emotes"><span>Emotes</span></a>
+                    </li>
+                    <li data-ref="melons">
+                        <a href="#melons"><span>Melon</span></a>
+                    </li>
+                    <li data-ref="commission">
+                        <a href="#commission"><span>Commission</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="headerGradient"></div>
+        </header>
 
-        <div class="main-container">
-            <main>
-                <div class="profile">
-                    <div class="pfp-img-container">
-                        <div class="center-image">
+        <main>
+            <section class="intro twoColSection">
+                <div class="introContent content">
+                    <h1 id="top" title="JulianDough" class="slowBobAnim">JulianDough</h1>
+                    <p>
+                        I draw furry art, trying to make a comic and it&apos;s going well. I also do
+                        commissions!
+                        <img
+                            src="img/brush_stroke_sm.png"
+                            class="brushStrokeSm"
+                            alt="Short brush stroke"
+                        />
+                    </p>
+
+                    <div class="socialIcons">
+                        <a
+                            data-tooltip-text="My Discord Server"
+                            href="https://discord.com/invite/RBFkr782hm"
+                            ref="noopener noreferrer nofollow"
+                            target="_blank"
+                        >
+                            <i class="bi bi-discord"></i>
+                        </a>
+                        <a
+                            data-tooltip-text="Follow & DM me on Twitter"
+                            href="https://twitter.com/bobbycat25"
+                            ref="noopener noreferrer nofollow"
+                            target="_blank"
+                        >
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <!-- TODO: email address -->
+                        <a data-tooltip-text="Send me an Email" href="mailto:" target="_blank">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                    </div>
+
+                    <div class="commissionBtn">
+                        <a href="#commission" class="btn btnRainbow">
+                            Commission me!
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="brushContainer brushHappy">
+                    <div class="brush brush1">
+                        <img src="img/brush_1.png" class="brushImg" alt="Brush stroke effect" />
+                    </div>
+                    <div class="brush brush2">
+                        <img src="img/brush_2.png" class="brushImg" alt="Brush stroke effect" />
+                    </div>
+                    <div class="brush brush3">
+                        <img src="img/brush_3.png" class="brushImg" alt="Brush stroke effect" />
+                    </div>
+
+                    <div class="brushObject brushObjectUp">
+                        <div class="julianHappyContainer">
                             <img
-                                src="img/pfp.png"
-                                class="pfp-img bounce-hover bounce-active"
-                                alt="Profile picture"
+                                src="img/happy.png"
+                                class="julianHappy"
+                                alt="Julian character hero art"
+                            />
+                            <img
+                                src="img/happy_bean_1.png"
+                                class="happyBean happyBean1"
+                                alt="Happy bean"
+                            />
+                            <img
+                                src="img/happy_bean_2.png"
+                                class="happyBean happyBean2"
+                                alt="Happy bean"
+                            />
+                            <img
+                                src="img/happy_bean_3.png"
+                                class="happyBean happyBean3"
+                                alt="Happy bean"
                             />
                         </div>
-                        <img
-                            src="img/surprised.png"
-                            class="pfp-img-surprised"
-                            alt="Surprised emote"
-                        />
-                    </div>
-
-                    <div class="center-image">
-                        <img src="img/signature.png" class="signature-img" alt="Signature" />
+                        <div class="meContainer slowBobAnim">
+                            me
+                            <img src="img/me_arrow.png" alt="Arrow pointing at hero" />
+                        </div>
                     </div>
                 </div>
-                <div class="gallery">
-                    <img src="img/gallery/1_2.jpg" class="gallery-img" data-anim-delay="0" />
-                    <img src="img/gallery/2.jpg" class="gallery-img" data-anim-delay="1" />
-                    <img src="img/gallery/3.jpg" class="gallery-img" data-anim-delay="2" />
-                    <img src="img/gallery/4.jpg" class="gallery-img" data-anim-delay="3" />
-                    <img src="img/gallery/5.jpg" class="gallery-img" data-anim-delay="4" />
-                    <img src="img/gallery/6.jpg" class="gallery-img" data-anim-delay="5" />
+            </section>
 
-                    <svg width="0" height="0">
-                        <defs>
-                            <clipPath id="blade-clip">
-                                <!-- This is fucked -->
-                                <polygon points="88 5, 200 5, 112 195, 0 195"></polygon>
-
-                                <circle cx="93" cy="5" r="5"></circle>
-                                <circle cx="194.75" cy="5" r="5"></circle>
-                                <polygon points="93 0, 195 0, 200 6, 88 6"></polygon>
-
-                                <circle cx="5.5" cy="195" r="5"></circle>
-                                <circle cx="107" cy="195" r="5"></circle>
-                                <polygon points="5 194, 106 194, 106 200, 5 200"></polygon>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="character-price">
-                    <div class="character-container" ondragover="handleDragOver(event)">
+            <section class="emotes twoColSection">
+                <div class="emotesContent content">
+                    <h2 id="emotes">
+                        Emotes!
                         <img
-                            src="img/character-shaded.png"
-                            id="character-hidden-img"
-                            class="character character-hidden"
+                            src="img/emotes/1242180696009605294.png"
+                            class="textEmote"
+                            title="Happy Julian"
+                            alt="Happy Julian emote"
                         />
+                    </h2>
+                    <p>
+                        I can create <span class="textAccent">emotes</span> for your Discord server,
+                        Twitch chat or any other application.
+                    </p>
+                    <p>
+                        Each emote costs <span class="textAccent">$8</span>
+                        <small>($10 for animated)</small> and bundle discounts are available.
+                    </p>
+                </div>
 
-                        <div class="character character-visible-container">
-                            <div class="character-visible" id="character-visible">
-                                <img
-                                    src="img/character-shaded.png"
-                                    class="character"
-                                    id="character-img"
-                                />
+                <div class="brushContainer brushContainerHidden brushEmotes">
+                    <div class="brush brush1">
+                        <img src="img/brush_1.png" class="brushImg" alt="Brush stroke effect" />
+                    </div>
+                    <div class="brush brush2">
+                        <img src="img/brush_2.png" class="brushImg" alt="Brush stroke effect" />
+                    </div>
+                    <div class="brush brush3">
+                        <img src="img/brush_3.png" class="brushImg" alt="Brush stroke effect" />
+                    </div>
+
+                    <div class="brushObject">
+                        <div class="scrollingEmoteContainer" id="scrollingEmoteContainer"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="melons twoColSection">
+                <div class="brushContainer brushContainerHidden brushMelons">
+                    <div class="brush brush1">
+                        <img src="img/brush_1.png" class="brushImg" alt="Brush stroke effect" />
+                    </div>
+                    <div class="brush brush2">
+                        <img src="img/brush_2.png" class="brushImg" alt="Brush stroke effect" />
+                    </div>
+                    <div class="brush brush3">
+                        <img src="img/brush_3.png" class="brushImg" alt="Brush stroke effect" />
+                    </div>
+
+                    <div class="brushObject brushObjectUp">
+                        <img src="img/space.png" class="melonSpace" alt="Space background" />
+                        <img src="img/globe.png" class="melonSpace melonGlobe" alt="Earth globe" />
+                        <img
+                            src="img/melons/melon1.png"
+                            class="melon melon1"
+                            alt="Character on melon 1"
+                        />
+                        <img
+                            src="img/melons/melon2.png"
+                            class="melon melon2"
+                            alt="Character on melon 2"
+                        />
+                        <img
+                            src="img/melons/melon3.png"
+                            class="melon melon3"
+                            alt="Character on melon 3"
+                        />
+                        <img
+                            src="img/melons/melon4.png"
+                            class="melon melon4"
+                            alt="Character on melon 4"
+                        />
+                    </div>
+                </div>
+
+                <div class="melonContent content">
+                    <h2 id="melons">Melons, melons, melons!</h2>
+                    <p>
+                        You want your character on a melon? With just an additional
+                        <span class="textAccent">$2</span> to any commission, you too can have your
+                        character leisurely resting on a melon!
+                    </p>
+                </div>
+            </section>
+
+            <section class="commissionSection">
+                <h2 id="commission">Commission</h2>
+
+                <div class="calculatorContainer">
+                    <div class="commissionCalculator">
+                        <div class="calcForm">
+                            <div class="calcButtonRow">
+                                <button
+                                    class="calcButton"
+                                    data-context="character"
+                                    onclick="handleClickCommissionType(this)"
+                                >
+                                    <span>Character</span>
+                                </button>
+                                <button
+                                    class="calcButton"
+                                    data-context="emotes"
+                                    onclick="handleClickCommissionType(this)"
+                                >
+                                    <span>Emotes</span>
+                                </button>
+                                <button
+                                    class="calcButton"
+                                    data-context="something"
+                                    onclick="handleClickCommissionType(this)"
+                                >
+                                    <span>Something Else</span>
+                                </button>
                             </div>
 
-                            <div class="dragger">
+                            <!-- Character -->
+                            <div
+                                class="calcFormContent characterFormContent"
+                                data-context="character"
+                            >
                                 <div
-                                    class="dragger-handle"
-                                    id="dragger-handle"
-                                    draggable="true"
-                                    ondragstart="handleDragStart(event)"
-                                    ondragend="handleDragEnd(event)"
-                                ></div>
+                                    class="characterContainer"
+                                    id="character-container"
+                                    onmouseleave="handleCharacterMouseLeave(event)"
+                                    onmousemove="handleCharacterMouseMove(event)"
+                                    onmouseup="handleCharacterMouseUp(event)"
+                                    ontouchend="handleCharacterTouchEnd(event)"
+                                    ontouchcancel="handleCharacterTouchEnd(event)"
+                                    ontouchmove="handleCharacterTouchMove(event)"
+                                >
+                                    <img
+                                        src="img/character/color.png"
+                                        class="character characterBackground"
+                                        id="character-background"
+                                    />
+                                    <div class="characterForegroundOverlay">
+                                        <div
+                                            class="characterForegroundContainer"
+                                            id="character-foreground-container"
+                                        >
+                                            <img
+                                                src="img/character/color.png"
+                                                class="character characterForeground"
+                                                id="character-foreground"
+                                            />
+                                        </div>
+                                        <div class="characterDragger" id="character-dragger">
+                                            <div
+                                                class="characterDraggerHandle"
+                                                id="character-dragger-handle"
+                                                onmousedown="handleCharacterMouseDown(event)"
+                                                ontouchstart="handleCharacterTouchStart(event)"
+                                            >
+                                                <i class="bi bi-arrows-vertical"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="characterStyleSwitcher" id="character-style-buttons">
+                                    <button
+                                        data-tooltip-text="Black & White"
+                                        class="characterStyleBtn bw"
+                                        data-style="bw"
+                                        onclick="handleSetCharacterStyle(this)"
+                                    >
+                                        <div class="characterStyleBtnHalf"></div>
+                                    </button>
+                                    <button
+                                        data-tooltip-text="Color"
+                                        class="characterStyleBtn color active"
+                                        data-style="color"
+                                        onclick="handleSetCharacterStyle(this)"
+                                    >
+                                        <div class="characterStyleBtnHalf"></div>
+                                    </button>
+                                    <button
+                                        data-tooltip-text="Shaded"
+                                        class="characterStyleBtn shaded"
+                                        data-style="shaded"
+                                        onclick="handleSetCharacterStyle(this)"
+                                    ></button>
+                                </div>
+
+                                <div class="characterFormSeparator"></div>
+                            </div>
+                            <!-- Emotes -->
+                            <div class="calcFormContent" data-context="emotes">Emotes</div>
+                            <!-- "Something else" -->
+                            <div class="calcFormContent" data-context="something">
+                                <!-- Poetry time -->
+                                <pre style="font-size: 14px; text-align: center">
+There once was a guy named Julian,
+Who worked at Domino's slingin’ in the pan,
+But his true love, oh, it was pure,
+Was drawing furries, that’s for sure!
+
+He'd knead the dough and spin the pies,
+But all the while he'd fantasize,
+Of foxes, wolves, and cats with flair,
+In colorful outfits, with wild hair.
+
+The customers asked for extra cheese,
+But Julian's mind was lost in trees,
+Where furry critters danced and played,
+And Domino's bills were left unpaid.
+
+He'd sketch a rabbit in a suit,
+While someone’s pizza turned to soot,
+"Where’s my order?" the manager roared,
+But Julian’s imagination soared.
+
+He'd draw a lion with a cape,
+While pepperoni took odd shape,
+And though the pizza oven burned,
+To furry art, he always returned.
+
+So if you order from Domino’s one day,
+And your pizza arrives in a weird array,
+Just know that Julian’s dreams took flight,
+In a world where furries rule the night!
+
+- ChatGPT, August 2024</pre
+                                >
+                                <div style="text-align: center">
+                                    <img src="img/dance.gif" alt="Silly Julian dance" />
+                                </div>
                             </div>
                         </div>
+                        <div class="calcResults">
+                            <div class="calcMoney" id="commission-pricing">$0</div>
 
-                        <div
-                            class="character-version-selector-container"
-                            id="character-variant-selectors"
+                            <div class="calcDetails" id="commission-details"></div>
+
+                            <div class="calcControls">
+                                <button class="btn" onclick="handleOpenCommissionDetails()">
+                                    Commission Details
+                                </button>
+                            </div>
+
+                            <hr />
+
+                            <div style="margin-bottom: 12px">Contact me:</div>
+                            <div class="calcControls">
+                                <a class="btn"><i class="bi bi-discord"></i>Discord</a>
+                                <a class="btn"><i class="bi bi-twitter"></i>Twitter</a>
+                                <a class="btn"> <i class="bi bi-envelope-fill"></i>Email </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <dialog popover="manual" id="detail-popover">
+            <div class="dialogHeader">
+                <h3>Commission Details</h3>
+                <button class="btn btnIcon" onclick="handleCloseCommissionDetails()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <div class="dialogBody">
+                <p>Please read the following terms and conditions before commissioning me.</p>
+
+                <h4>DOs & DON'Ts</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <i class="bi bi-check-lg textPositive"></i>
+                                DOs
+                            </th>
+                            <th>
+                                <i class="bi bi-x-lg textNegative"></i>
+                                DON'Ts
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fanart/IPs</td>
+                            <td>
+                                NSFW
+                                <small
+                                    >(TW:
+                                    <span class="spoiler" tabindex="0"
+                                        >Nudity, Gore, Self harm, etc.</span
+                                    >)</small
+                                >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>OCs</td>
+                            <td>Mechas</td>
+                        </tr>
+                        <tr>
+                            <td>Furries</td>
+                            <td>Excessive armor/details</td>
+                        </tr>
+                        <tr>
+                            <td>Humanoids</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Contact</h4>
+                <ul>
+                    <li>
+                        <strong>Discord:</strong> You can send me a direct message on Discord. Join
+                        <a
+                            href="https://discord.com/invite/RBFkr782hm"
+                            target="_blank"
+                            ref="noopener noreferrer nofollow"
+                            ><i class="bi bi-discord"></i> my Discord server</a
                         >
-                            <div
-                                class="character-version-selector character-version-selector-bw"
-                                data-variant="bw"
-                                onclick="setCharacterVariant('bw')"
-                            >
-                                <div
-                                    class="character-version-selector-half character-version-selector-bw"
-                                ></div>
-                            </div>
-                            <div
-                                class="character-version-selector character-version-selector-color"
-                                data-variant="color"
-                                onclick="setCharacterVariant('color')"
-                            >
-                                <div
-                                    class="character-version-selector-half character-version-selector-color"
-                                ></div>
-                            </div>
-                            <div
-                                class="character-version-selector character-version-selector-shaded"
-                                data-variant="shaded"
-                                onclick="setCharacterVariant('shaded')"
-                            ></div>
-                        </div>
-                    </div>
-                    <div class="info-container">
-                        <div>
-                            <span id="character-pricing-price"></span>
-                        </div>
-                        <div>
-                            <span id="character-pricing-name"></span>
-                        </div>
-                        <div>
-                            <span id="character-pricing-description"></span>
-                        </div>
-                    </div>
-                </div>
-                <div>box 4</div>
-            </main>
-        </div>
+                        and find my user (<code>@juliandough</code>).
+                    </li>
+                    <li>
+                        <strong>Twitter:</strong> Follow my
+                        <a
+                            href="https://twitter.com/bobbycat25"
+                            target="_blank"
+                            ref="noopener noreferrer nofollow"
+                            ><i class="bi bi-twitter"></i> Twitter account</a
+                        >
+                        (<code>@bobbycat25</code>) and send me a DM.
+                    </li>
+                    <li>
+                        <strong>Email:</strong> You can
+                        <a href="mailto:"><i class="bi bi-envelope-fill"></i> send me an email</a>
+                        at <code>MYEMAIL@ADDRESS.TLD</code>.
+                    </li>
+                </ul>
+
+                <h4>Commission Process</h4>
+                <p>
+                    Check my
+                    <a
+                        href="https://trello.com/b/gkqtamX4/julians-commission"
+                        ref="noopener noreferrer nofollow"
+                        target="_blank"
+                        ><i class="bi bi-trello"></i> Trello board</a
+                    >
+                    for my commission queue. If the queue is full and I am currently not accepting
+                    new commissions, you may still contact me. However, I will not be able to start
+                    on your commission until a slot is available.
+                </p>
+                <p>
+                    Once you've decided on a commission, please contact me with the details. I will
+                    provide you with a quote and a rough sketch. Once you've approved the sketch, I
+                    will start the final piece. You will receive a watermarked preview of the final
+                    piece. Once you've approved the final piece, you will receive the full
+                    resolution image.
+                </p>
+                <p>
+                    Please have a visual reference of your character or idea ready. If you don't
+                    have one, please provide a detailed description.
+                </p>
+                <p>
+                    My usual turnaround time is 1-2 weeks, but this may vary depending on the
+                    complexity of the commission and my current workload.
+                </p>
+
+                <h4>Payment & Money</h4>
+                <ul>
+                    <li>Payment through <span class="textAccent">PayPal</span></li>
+                    <li>
+                        All prices are in <span title="United States Dollar">USD 🇺🇸</span>, please
+                        pay me in USD not your local currency
+                    </li>
+                    <li>
+                        Additional fees may be charged depending on the commission. The commission
+                        calculator on this website is just an approximation.
+                    </li>
+                    <li>
+                        (Partial) payment is due upfront. I will start on your commission once
+                        payment is received.
+                    </li>
+                    <li>
+                        Refunds are available if I have not started on your commission. Once I've
+                        started on your commission, refunds are not available.
+                    </li>
+                </ul>
+
+                <h4>Legal & Copyright</h4>
+                <ul>
+                    <li>I retain copyright of the provided product.</li>
+                    <li>
+                        You are <span class="textPositive">allowed</span> to use the provided
+                        product in personal projects. For commercial use, please contact me.
+                    </li>
+                    <li>
+                        You are <span class="textPositive">allowed</span> to use the artwork for
+                        personal branding, such as social media avatars, hero images, emotes and
+                        website assets <small>(with credit)</small>.
+                    </li>
+                    <li>
+                        You are <span class="textPositive">allowed</span> to sell merch (and similar
+                        business ventures) that includes my artwork, <em>with prior approval</em>.
+                        Talk to me about this during the commission process if you are already
+                        planning for this.
+                    </li>
+                    <li>
+                        You are <em class="textNegative">NOT allowed</em> to claim or sell my
+                        artwork as your own.
+                    </li>
+                    <li>
+                        You are <em class="textNegative">NOT allowed</em> to modify the artwork in a
+                        manner that breaches copyright and claim it as your own
+                    </li>
+                    <li>
+                        You are <em class="textNegative">NOT allowed</em> to remove my signature
+                        from the corner of the artwork. It is fine if cropped out due to for example
+                        avatar restrictions <small>(like circular avatars)</small>. When sharing the
+                        full artwork, the signature has to remain.
+                    </li>
+                </ul>
+
+                <details>
+                    <summary>View full terms</summary>
+                    <p>
+                        <em>Copyright Ownership:</em> All artwork created by JulianDough is &copy;
+                        JulianDough, unless otherwise agreed upon in writing.
+                    </p>
+                    <p>
+                        <em>Personal Use License:</em> Clients are granted a non-exclusive,
+                        non-transferable license to use the commissioned artwork for personal,
+                        non-commercial purposes only. This includes use on social media with proper
+                        credit, as avatars, or for printing for personal enjoyment.
+                    </p>
+                    <p>
+                        <em>Commercial Use:</em> Any commercial use of the commissioned artwork,
+                        including but not limited to merchandise, promotional materials, or
+                        reselling, is strictly prohibited unless a separate commercial license is
+                        negotiated.
+                    </p>
+                    <p>
+                        <em>Resale and Redistribution:</em> Redistribution, resale, or modification
+                        of the artwork is not permitted without explicit written consent from
+                        JulianDough.
+                    </p>
+                    <p>
+                        <em>Credit Requirements:</em> When displaying the commissioned artwork
+                        online, clients must provide proper credit to JulianDough, linking back to
+                        the artist's website or social media profiles.
+                    </p>
+                    <p>
+                        <em>Alteration Policy:</em> Clients may not alter the commissioned artwork
+                        without prior permission. This includes but is not limited to adding text,
+                        filters, or additional artwork.
+                    </p>
+                    <p>
+                        <em>Refund Policy:</em> Refunds will only be provided under specific
+                        circumstances, such as the inability of the artist to complete the work or
+                        mutual agreement to terminate the commission. Deposits may be
+                        non-refundable.
+                    </p>
+                    <p>
+                        <em>Payment Terms:</em> Full payment or a deposit is required before work on
+                        the commission begins. Payment is only accepted through PayPal.
+                    </p>
+                    <p>
+                        <em>Turnaround Time:</em> Estimated turnaround time will be provided upon
+                        commission acceptance. Delays may occur due to complexity, workload, or
+                        unforeseen circumstances, and clients will be notified in such cases.
+                    </p>
+                    <p>
+                        <em>Rights to Display:</em> JulianDough retains the right to display
+                        commissioned artwork in portfolios, social media, or promotional materials
+                        unless a non-disclosure agreement (NDA) is requested by the client.
+                    </p>
+                    <p>
+                        <em>Mature Content:</em> Commissions involving mature or explicit content
+                        will only be accepted from clients aged 18 or older. Proof of age may be
+                        required.
+                    </p>
+                    <p>
+                        <em>Jurisdiction and Governing Law:</em> All agreements and disputes will be
+                        governed by the laws of the United States of America, and any legal disputes
+                        will be resolved in the United States of America.
+                    </p>
+                    <p>
+                        <em>Amendments:</em> JulianDough reserves the right to amend these terms at
+                        any time. Clients will be notified of any significant changes that may
+                        affect ongoing commissions.
+                    </p>
+
+                    <p>
+                        <small>
+                            Terms last updated on August 15, 2024
+                            <i class="bi bi-dot"></i>
+                            <a href="/terms.html" target="_blank">View print version</a>
+                        </small>
+                    </p>
+                </details>
+            </div>
+        </dialog>
+
+        <footer>
+            <div>
+                <img src="img/brush_stroke_footer.png" alt="Small vertical brush stroke" />
+            </div>
+            <p>Copyright &copy; <span id="copyright-year">2024</span> JulianDough</p>
+            <p>
+                Made with :3 by
+                <a href="https://nilllzz.dev" target="_blank">nilllzz</a>
+            </p>
+        </footer>
 
         <script src="index.js"></script>
     </body>
