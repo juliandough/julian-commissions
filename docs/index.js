@@ -471,7 +471,11 @@ function updateCalculatorResultsCharacter() {
         "</b> <small>(" +
         styleDisplay +
         ")</small><br><br>" +
-        closestPricing.description;
+        closestPricing.description +
+        "<br><br>" +
+        '<a href="img/character/example/' +
+        closestPricing.name +
+        '.png" target="_blank">Example <i class="bi bi-arrow-up-right-square-fill"></i></a>';
 }
 
 function updateCalculatorResultsEmotes() {
@@ -481,8 +485,36 @@ function updateCalculatorResultsEmotes() {
     price += melonTaxEl.checked ? 2 : 0;
 
     updatePriceDisplay(price);
-
     commissionDetailsEl.innerText = "";
+
+    const melonPyramidEl = document.getElementById("melon-pyramid");
+    melonPyramidEl.innerHTML = "";
+
+    let row = 1;
+    let total = 0;
+
+    while (total < emoteCount) {
+        const perRow = Math.min(emoteCount - total, row);
+        total += perRow;
+
+        if (perRow > 0) {
+            const melonPyramidRowEl = document.createElement("div");
+            melonPyramidRowEl.className = "melonPyramidRow";
+
+            for (let i = 0; i < perRow; i++) {
+                const melonEl = document.createElement("img");
+                melonEl.src = "img/melons/melon5.png";
+                melonEl.className = "melonPyramidMelon";
+                // Random delay between 0 and 1s:
+                melonEl.style.animationDelay = -Math.random() + "s";
+                melonPyramidRowEl.appendChild(melonEl);
+            }
+
+            melonPyramidEl.appendChild(melonPyramidRowEl);
+        }
+
+        row++;
+    }
 }
 
 function updateCalculatorResultsSomething() {

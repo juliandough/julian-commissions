@@ -1214,6 +1214,49 @@ footer a {
     font-weight: bold;
 }
 
+.emoteCounter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.melonPyramid {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.melonPyramidMelon {
+    width: 32px;
+    height: 32px;
+    margin: 1px;
+
+    animation-name: melonPyramidMelon-anim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+@keyframes melonPyramidMelon-anim {
+    0% {
+        transform: none;
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+    }
+
+    75% {
+        transform: rotateZ(10deg);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
 /* Results: */
 
 .calcResults {
