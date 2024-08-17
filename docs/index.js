@@ -267,6 +267,26 @@ function findClosestCharacterPricing(height) {
     return closestPricing;
 }
 
+function handleCharacterKeyPress(event) {
+    // Move one pricing level up on arrow key, down on arrow key down:
+    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        event.preventDefault();
+        characterForegroundContainerEl.style.transition = "height 0.25s ease";
+        const closestPricing = findClosestCharacterPricing(currentCharacterHeight);
+        const currentIndex = characterPricings.indexOf(closestPricing);
+
+        let newIndex = currentIndex;
+        if (event.key === "ArrowUp") {
+            newIndex = Math.max(0, currentIndex - 1);
+        } else {
+            newIndex = Math.min(characterPricings.length - 1, currentIndex + 1);
+        }
+
+        setCharacterHeight(characterPricings[newIndex].height);
+        updateCalculatorResults();
+    }
+}
+
 function handleDragEnd() {
     characterForegroundContainerEl.style.transition = "height 0.25s ease";
     const closestPricing = findClosestCharacterPricing(currentCharacterHeight);

@@ -8,9 +8,9 @@
     --bg-color: rgb(252, 247, 238);
     --bg-color-dark: rgb(190, 166, 120);
     --accent-color: #01ff8d;
-    --accent-color-dark: #0e6210;
+    --accent-color-dark: #0e6210; /* >:3 */
     --font-color: #333333; /* :3 */
-    --font-color-muted: #666666;
+    --font-color-muted: #666666; /* D: */
 
     --color-positive: rgb(132, 245, 132);
     --color-negative: rgb(224, 106, 106);
@@ -138,7 +138,8 @@ small {
     transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
     background-color: var(--accent-color);
     color: var(--font-color);
 }
@@ -178,11 +179,13 @@ small {
     transition: background-color 0.1s ease;
 }
 
-.btnRainbow:hover {
+.btnRainbow:hover,
+.btnRainbow:focus {
     border-color: var(--accent-color) !important;
 }
 
-.btnRainbow:hover::before {
+.btnRainbow:hover::before,
+.btnRainbow:focus::before {
     background-color: var(--accent-color);
 }
 
@@ -266,7 +269,9 @@ small {
 }
 
 *[data-tooltip-text]:hover::before,
-*[data-tooltip-text]:hover::after {
+*[data-tooltip-text]:hover::after,
+*[data-tooltip-text]:focus::before,
+*[data-tooltip-text]:focus::after {
     display: block;
 
     pointer-events: none;
@@ -361,13 +366,15 @@ dialog .dialogBody {
     padding-bottom: 32px;
     padding-left: 32px;
     padding-right: 32px;
+
+    line-height: 1.25em;
 }
 
 dialog .dialogBody h4 {
     position: relative;
     max-width: 100%;
     overflow: hidden;
-    margin-top: 64px;
+    margin-top: 80px;
 }
 
 dialog .dialogBody h4::after {
@@ -513,7 +520,8 @@ header li a span {
     transition: transform 0.25s ease;
 }
 
-header li:hover a span {
+header li:hover a span,
+header li a:focus span {
     transform: translateY(-4px);
 }
 
@@ -555,12 +563,6 @@ header li:hover a span {
 /* ------------------------------------------------------------------------------------- */
 /*#region Intro*/
 
-section.intro {
-}
-
-.introContent {
-}
-
 .brushStrokeSm {
     height: 14px;
 }
@@ -582,7 +584,8 @@ section.intro {
     padding-left: 0;
 }
 
-.socialIcons > a:hover {
+.socialIcons > a:hover,
+.socialIcons > a:focus {
     -webkit-text-stroke-width: 2px;
     color: var(--accent-color);
 }
@@ -613,7 +616,8 @@ section.intro {
     margin-top: 32px;
 }
 
-.commissionBtn > a:hover {
+.commissionBtn > a:hover,
+.commissionBtn > a:focus {
     filter: drop-shadow(0 0 5px var(--accent-color));
 }
 
@@ -739,12 +743,6 @@ section.intro {
 /* ------------------------------------------------------------------------------------- */
 /*#region Emotes*/
 
-section.emotes {
-}
-
-.emotesContent {
-}
-
 .brushEmotes {
     max-width: 700px;
     flex-grow: 1;
@@ -824,12 +822,6 @@ section.emotes {
 
 /* ------------------------------------------------------------------------------------- */
 /*#region Melons*/
-
-section.melons {
-}
-
-.melonContent {
-}
 
 .brushMelons {
     max-width: 700px;
@@ -1023,11 +1015,13 @@ footer a {
     transition: background-color 0.1s ease, color 0.1s ease;
 }
 
-.calcButton:hover {
+.calcButton:hover,
+.calcButton:focus {
     background-color: var(--bg-color-dark);
 }
 
-.calcButton.active:hover {
+.calcButton.active:hover,
+.calcButton.active:focus {
     color: var(--bg-color-dark);
 }
 
@@ -1148,7 +1142,8 @@ footer a {
         filter 0.1s ease;
 }
 
-.characterDraggerHandle:hover {
+.characterDraggerHandle:hover,
+.characterDraggerHandle:focus {
     border-color: var(--accent-color);
     color: var(--accent-color);
     filter: drop-shadow(0 0 4px var(--accent-color));
@@ -1583,7 +1578,7 @@ footer a {
     }
 
     .calcForm {
-        max-height: 75vh;
+        /* max-height: 75vh; */
     }
 
     .commissionCalculator > div {
