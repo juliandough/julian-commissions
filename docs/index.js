@@ -558,6 +558,9 @@ setInterval(() => {
 // #endregion
 // ------------------------------------------------------------------------------------------------
 
+// ------------------------------------------------------------------------------------------------
+// #region Commission details dialog
+
 function handleOpenCommissionDetails() {
     const dialogEl = document.getElementById("detail-popover");
     dialogEl.showModal();
@@ -583,3 +586,34 @@ function closeCommissionDetailsOnEsc(event) {
         handleCloseCommissionDetails();
     }
 }
+
+// #endregion
+// ------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------------------------
+// #region Julian happy animation
+
+function handleJulianHappyAnim() {
+    const julianEl = document.getElementById("julian-happy");
+    julianEl.addEventListener("animationend", endJulianAnim);
+    const surprisedEl = document.getElementById("julian-surprised");
+    surprisedEl.addEventListener("animationend", endSurprisedAnim);
+
+    julianEl.style.animationName = "bounce-anim";
+    surprisedEl.style.animationName = "julianSurprised-anim";
+}
+
+function endJulianAnim() {
+    const julianEl = document.getElementById("julian-happy");
+    julianEl.style.animationName = "";
+    julianEl.removeEventListener("animationend", endJulianAnim);
+}
+
+function endSurprisedAnim() {
+    const surprisedEl = document.getElementById("julian-surprised");
+    surprisedEl.style.animationName = "";
+    surprisedEl.removeEventListener("animationend", endSurprisedAnim);
+}
+
+// #endregion
+// ------------------------------------------------------------------------------------------------
