@@ -223,12 +223,21 @@
             <section class="commissionSection">
                 <h2 id="commission">Commission</h2>
 
+                <div class="commissionStatusContainer">
+                    <div class="commissionStatus" id="commission-status">
+                        <div>Commissions are <strong id="commission-status-text">???</strong>!</div>
+                        <div class="commissionSlots" id="commission-slots">
+                            &nbsp;<small id="commission-slots-text">X/5 slots available</small>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="calculatorContainer">
                     <div class="commissionCalculator">
                         <div class="calcForm">
                             <div class="calcButtonRow">
                                 <button
-                                    class="calcButton"
+                                    class="calcButton active"
                                     data-context="character"
                                     onclick="handleClickCommissionType(this)"
                                 >

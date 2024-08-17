@@ -950,6 +950,61 @@ footer a {
 /* ------------------------------------------------------------------------------------- */
 /*#region Commission*/
 
+.commissionSection > h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.commissionStatusContainer {
+    display: flex;
+    margin-bottom: 32px;
+    justify-content: center;
+}
+
+.commissionStatus {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    border-radius: 12px;
+}
+
+.commissionStatus.open {
+    background-color: var(--color-positive);
+}
+
+.commissionStatus.closed {
+    background-color: var(--color-negative);
+}
+
+.commissionSlots {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.commissionSlot {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 5px solid var(--font-color);
+    background-color: var(--font-color-muted);
+}
+
+.commissionSlot.free {
+    background-color: var(--accent-color);
+}
+
 .calculatorContainer {
     display: flex;
     align-items: center;

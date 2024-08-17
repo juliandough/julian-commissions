@@ -1,3 +1,37 @@
+const commissionsOpen = true;
+const commissionSlotsTaken = 2;
+const commissionSlots = 5;
+
+// ------------------------------------------------------------------------------------------------
+// #region Commission Slots
+function updateCommissionSlots() {
+    const statusEl = document.getElementById("commission-status");
+    statusEl.classList.add(commissionsOpen ? "open" : "closed");
+
+    const statusTextEl = document.getElementById("commission-status-text");
+    statusTextEl.innerText = commissionsOpen ? "OPEN" : "CLOSED";
+
+    const slotsFree = commissionSlots - commissionSlotsTaken;
+    const slotsEl = document.getElementById("commission-slots");
+
+    for (let i = 0; i < commissionSlots; i++) {
+        const slotEl = document.createElement("span");
+        slotEl.classList.add("commissionSlot");
+        if (i < slotsFree) {
+            slotEl.classList.add("free");
+        }
+
+        // Add slotEl to the start of slotsEl:
+        slotsEl.insertBefore(slotEl, slotsEl.firstChild);
+    }
+
+    const slotsTextEl = document.getElementById("commission-slots-text");
+    slotsTextEl.innerText = slotsFree + "/" + commissionSlots + " slots available";
+}
+updateCommissionSlots();
+// #endregion
+// ------------------------------------------------------------------------------------------------
+
 // ------------------------------------------------------------------------------------------------
 // #region Animate brushes
 // Observe brush containers to have them appear when scrolled into view.
