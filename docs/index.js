@@ -97,6 +97,7 @@ function loadGallery() {
         const galleryImageEl = document.createElement("img");
         galleryImageEl.src = "img/gallery/" + galleryItem.filename;
         galleryImageEl.alt = "Gallery image";
+        galleryImageEl.loading = "lazy";
 
         galleryItemEl.appendChild(galleryImageEl);
         galleryEl.appendChild(galleryItemEl);
