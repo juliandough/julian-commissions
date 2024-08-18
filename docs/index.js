@@ -32,6 +32,111 @@ updateCommissionSlots();
 // #endregion
 // ------------------------------------------------------------------------------------------------
 
+/** @typedef {{filename:string,name:string,config:{index:number,style:CharacterStyle}}} GalleryItem */
+
+// Image files from the img/gallery folder:
+/** @type {GalleryItem[]} */
+const galleryItems = [
+    {
+        filename: "1CB975A6-78C7-4D1F-B4D0-32A0B6E8573B.jpg",
+        name: "Awesome art",
+        config: { index: 1, style: "shaded" },
+    },
+    {
+        filename: "GN14mXZWYAANfti.jpg",
+        name: "Cool art",
+        config: { index: 2, style: "color" },
+    },
+    {
+        filename: "GOP2Lc-WoAAwmsr.jpg",
+        name: "Nice art",
+        config: { index: 1, style: "color" },
+    },
+    {
+        filename: "GSlYiPPXEAI8rwB.jpg",
+        name: "Von He's so me",
+        config: { index: 1, style: "color" },
+    },
+    {
+        filename: "GT4SRNlXQAABYHv.jpg",
+        name: "Amazing art",
+        config: { index: 3, style: "color" },
+    },
+    {
+        filename: "GTPJ1eoW4AAZe5S.jpg",
+        name: "Incredible art",
+        config: { index: 2, style: "bw" },
+    },
+    {
+        filename: "moments.jpg",
+        name: "Memories",
+        config: { index: 2, style: "color" },
+    },
+    {
+        filename: "GLy9_kKW0AA9DEI.jpg",
+        name: "Art",
+        config: { index: 2, style: "shaded" },
+    },
+    {
+        filename: "FFD2C659-9A2F-4EDB-9ECB-A54E1EDE5D3D.png",
+        name: "Art",
+        config: { index: 2, style: "color" },
+    },
+];
+/** @type {GalleryItem|null} */
+let selectedGalleryItem = null;
+
+function loadGallery() {
+    const galleryEl = document.getElementById("gallery-container");
+
+    for (const galleryItem of galleryItems) {
+        const galleryItemEl = document.createElement("div");
+        galleryItemEl.className = "galleryItem";
+        galleryItemEl.tabIndex = 0;
+
+        const galleryImageEl = document.createElement("img");
+        galleryImageEl.src = "img/gallery/" + galleryItem.filename;
+        galleryImageEl.alt = "Gallery image";
+
+        galleryItemEl.appendChild(galleryImageEl);
+        galleryEl.appendChild(galleryItemEl);
+
+        galleryItemEl.addEventListener("click", () => {
+            // On mobile view, open the image src in a new tab:
+            if (window.innerWidth < 1000) {
+                window.open(galleryImageEl.src, "_blank");
+                return;
+            }
+
+            selectedGalleryItem = galleryItem;
+            const galleryDialogImgEl = document.getElementById("gallery-dialog-img");
+            galleryDialogImgEl.src = galleryImageEl.src;
+            const galleryNameEl = document.getElementById("gallery-img-name");
+            galleryNameEl.innerText = galleryItem.name;
+            handleOpenDialog("gallery-popover");
+        });
+    }
+}
+loadGallery();
+
+function handleGalleryDialogStartCommission() {
+    handleCloseDialog("gallery-popover");
+
+    if (!selectedGalleryItem) {
+        return;
+    }
+
+    const price = characterPricings[selectedGalleryItem.config.index];
+    if (!price) {
+        return;
+    }
+
+    setCharacterStyle(selectedGalleryItem.config.style);
+    setCharacterHeight(price.height);
+
+    window.location.replace("#commission");
+}
+
 // ------------------------------------------------------------------------------------------------
 // #region Animate brushes
 // Observe brush containers to have them appear when scrolled into view.
@@ -616,29 +721,34 @@ setInterval(() => {
 // #region Commission details dialog
 
 function handleOpenCommissionDetails() {
-    const dialogEl = document.getElementById("detail-popover");
+    handleOpenDialog("detail-popover");
+}
+
+function handleCloseCommissionDetails() {
+    handleCloseDialog("detail-popover");
+}
+
+// #endregion
+// ------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------------------------
+// #region Dialog handling
+
+function handleOpenDialog(dialogElementId) {
+    const dialogEl = document.getElementById(dialogElementId);
+    dialogEl.onclose = () => {
+        // Enable scroll of page.
+        document.body.style.overflow = "auto";
+    };
     dialogEl.showModal();
 
     // Disable scroll of page.
     document.body.style.overflow = "hidden";
-
-    document.addEventListener("keydown", closeCommissionDetailsOnEsc);
 }
 
-function handleCloseCommissionDetails() {
-    const dialogEl = document.getElementById("detail-popover");
+function handleCloseDialog(dialogElementId) {
+    const dialogEl = document.getElementById(dialogElementId);
     dialogEl.close();
-
-    // Enable scroll of page.
-    document.body.style.overflow = "auto";
-
-    document.removeEventListener("keydown", closeCommissionDetailsOnEsc);
-}
-
-function closeCommissionDetailsOnEsc(event) {
-    if (event.key === "Escape") {
-        handleCloseCommissionDetails();
-    }
 }
 
 // #endregion

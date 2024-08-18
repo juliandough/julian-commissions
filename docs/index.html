@@ -134,6 +134,64 @@
                 </div>
             </section>
 
+            <section class="gallerySection">
+                <h2 id="gallery">Gallery</h2>
+
+                <div class="gallery" id="gallery-container"></div>
+
+                <dialog popover="manual" id="gallery-popover" class="galleryDialog">
+                    <div class="galleryDialogBody">
+                        <button
+                            class="btn btnIcon galleryDialogClose"
+                            onclick="handleCloseDialog('gallery-popover')"
+                        >
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+
+                        <div class="brushContainer brushGallery">
+                            <div class="brush brush1">
+                                <img
+                                    src="img/brush_1.png"
+                                    class="brushImg"
+                                    alt="Brush stroke effect"
+                                />
+                            </div>
+                            <div class="brush brush2">
+                                <img
+                                    src="img/brush_2.png"
+                                    class="brushImg"
+                                    alt="Brush stroke effect"
+                                />
+                            </div>
+                            <div class="brush brush3">
+                                <img
+                                    src="img/brush_3.png"
+                                    class="brushImg"
+                                    alt="Brush stroke effect"
+                                />
+                            </div>
+
+                            <div class="brushObject brushObjectUp">
+                                <img id="gallery-dialog-img" class="galleryDialogImg" />
+                                <div class="galleryDialogImgInfo">
+                                    <p id="gallery-img-name">
+                                        Julian responsible for the apocalypse
+                                    </p>
+                                    <div>
+                                        <button
+                                            class="btn"
+                                            onclick="handleGalleryDialogStartCommission()"
+                                        >
+                                            Commission
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dialog>
+            </section>
+
             <section class="emotes twoColSection">
                 <div class="emotesContent content">
                     <h2 id="emotes">
@@ -451,7 +509,7 @@ In a world where furries rule the night!
             </section>
         </main>
 
-        <dialog popover="manual" id="detail-popover">
+        <dialog popover="manual" id="detail-popover" class="detailDialog">
             <div class="dialogHeader">
                 <h3>Commission Details</h3>
                 <button class="btn btnIcon" onclick="handleCloseCommissionDetails()">
