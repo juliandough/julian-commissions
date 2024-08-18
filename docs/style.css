@@ -331,6 +331,7 @@ dialog {
     min-width: 50vw;
     max-width: min(1000px, 90vw);
     box-sizing: border-box;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 
 dialog .dialogHeader {
@@ -847,6 +848,11 @@ dialog.galleryDialog {
 .galleryDialogImgInfo {
     margin-top: 12px;
     text-align: center;
+}
+
+.galleryDialogImgInfo > p {
+    font-family: "Wisdom";
+    font-size: 28px;
 }
 
 /*#endregion Gallery*/
@@ -1498,7 +1504,6 @@ dialog.detailDialog {
     color: var(--bg-color);
     border: none;
     border-radius: 16px;
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
     padding: 0;
 }
 
