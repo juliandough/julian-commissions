@@ -1,69 +1,76 @@
 body {
-    margin: 0;
-    background-color: #010101;
-    color: #e0e3e0;
-    font-family: "Courier New", Courier, monospace;
-
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 36px;
-
     height: 100vh;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 h1 {
-    font-size: 128px;
     text-align: center;
+}
+
+.demon {
     position: relative;
-
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
-.stereo::before {
-    content: attr(data-stereo);
-    position: absolute;
-    left: -10px;
-    top: -4px;
-    color: #0c162f;
-
-    z-index: -1;
-}
-
-.stereo::after {
-    content: attr(data-stereo);
-    position: absolute;
-    right: -20px;
-    top: 0;
-    color: #340c1a;
-
-    z-index: -2;
-}
-
-img {
+.demon .head {
+    display: block;
+    max-width: 50vw;
     max-height: 50vh;
-    max-width: 100vw;
-    aspect-ratio: 1000 / 1052;
+    aspect-ratio: 1121 / 1117;
+    z-index: 1;
 }
 
-a {
-    position: relative;
-    color: inherit;
-    text-decoration: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-
-    border-radius: 10px;
-    border-color: #e0e3e0;
-    border-style: solid;
-    border-width: 3px;
+.demon .eye {
+    position: absolute;
+    z-index: 2;
+    animation: eye-anim-left 2s linear infinite;
 }
 
-a:hover {
-    background-color: #e0e3e0;
-    color: #010101;
+@keyframes eye-anim-left {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes eye-anim-right {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.demon .eyeLeft {
+    top: 41.9%;
+    left: 31.6%;
+    width: 11.5%;
+    aspect-ratio: 129 / 148;
+    animation-name: eye-anim-left;
+    transform-origin: 48.8% 61.4%;
+    animation-delay: -1s;
+}
+
+.demon .eyeRight {
+    top: 46%;
+    left: 52%;
+    width: 9.7%;
+    aspect-ratio: 109 / 170;
+    animation-name: eye-anim-right;
+    transform-origin: 49.5% 65.2%;
+}
+
+@media (width <= 1000px) {
+    .demon .head {
+        max-width: 75vw;
+        max-height: 75vh;
+    }
+    h1 {
+        font-size: 40px;
+    }
 }
