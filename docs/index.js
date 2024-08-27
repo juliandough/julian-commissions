@@ -782,3 +782,124 @@ function endSurprisedAnim() {
 
 // #endregion
 // ------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------------------------------------------------------
+// #region Emote spawners
+
+/**
+ * @param {HTMLElement} element
+ */
+function attachEmoteSpawner(element) {
+    element.addEventListener("mouseenter", handleMouseEnterEmoteSpawner);
+    element.addEventListener("mouseleave", handleMouseLeaveEmoteSpawner);
+}
+
+/**
+ * @type {HTMLElement[]}
+ */
+const activeEmoteSpawners = [];
+/**
+ * @type {{el:HTMLElement,ttl:number,spin:number,velocity:{x:number,y:number}}[]}
+ */
+const spawnedEmotes = [];
+
+/**
+ * @param {MouseEvent} event
+ */
+function handleMouseEnterEmoteSpawner(event) {
+    activeEmoteSpawners.push(event.target);
+}
+
+/**
+ * @param {MouseEvent} event
+ */
+function handleMouseLeaveEmoteSpawner(event) {
+    const index = activeEmoteSpawners.indexOf(event.target);
+    if (index > -1) {
+        activeEmoteSpawners.splice(index, 1);
+    }
+}
+
+attachEmoteSpawner(document.getElementById("commission-btn"));
+
+setInterval(() => {
+    if (activeEmoteSpawners.length === 0) {
+        return;
+    }
+
+    for (const spawnerEl of activeEmoteSpawners) {
+        const bounds = spawnerEl.getBoundingClientRect();
+
+        const emoteEl = document.createElement("img");
+        // Pick random emote filename from emoteFilenames:
+        emoteEl.src =
+            "img/emotes/" + emoteFilenames[Math.floor(Math.random() * emoteFilenames.length)];
+        emoteEl.style.width = "24px";
+        emoteEl.style.aspectRatio = "1/1";
+        emoteEl.style.userSelect = "none";
+        emoteEl.style.pointerEvents = "none";
+        emoteEl.style.opacity = "0";
+
+        // Add emote to the top/left of the element, but directly to the body:
+        emoteEl.style.position = "absolute";
+        // Add emote some where between left/right side of the element:
+        // Also add the scroll of the viewport to the top position.
+        emoteEl.style.top = bounds.top - 32 + window.scrollY + "px";
+        emoteEl.style.left = bounds.left + bounds.width * Math.random() + "px";
+
+        document.body.appendChild(emoteEl);
+
+        spawnedEmotes.push({
+            el: emoteEl,
+            ttl: 75,
+            spin: (Math.random() - 0.5) * 2,
+            velocity: { x: (Math.random() - 0.5) * 2, y: -1 },
+            despawnOpacity: 1,
+        });
+    }
+}, 250);
+
+function updateEmotes() {
+    for (let i = spawnedEmotes.length - 1; i >= 0; i--) {
+        const spawnedEmote = spawnedEmotes[i];
+        spawnedEmote.ttl--;
+
+        if (spawnedEmote.ttl <= 0) {
+            if (spawnedEmote.despawnOpacity > 0) {
+                spawnedEmote.el.style.opacity = spawnedEmote.despawnOpacity;
+                spawnedEmote.despawnOpacity -= 0.1;
+            } else {
+                spawnedEmote.el.remove();
+                spawnedEmotes.splice(i, 1);
+                continue;
+            }
+        }
+
+        spawnedEmote.el.style.transform = "rotate(" + spawnedEmote.spin * 360 + "deg)";
+        spawnedEmote.el.style.top =
+            parseFloat(spawnedEmote.el.style.top) + spawnedEmote.velocity.y + "px";
+        spawnedEmote.el.style.left =
+            parseFloat(spawnedEmote.el.style.left) + spawnedEmote.velocity.x + "px";
+
+        // Slowly reduce spin:
+        spawnedEmote.spin *= 0.99;
+
+        // Apply gravity to velocity:
+        spawnedEmote.velocity.y += 0.1;
+        spawnedEmote.velocity.x *= 0.99;
+
+        // Increase opacity to 1:
+        if (spawnedEmote.ttl > 0) {
+            spawnedEmote.el.style.opacity = Math.min(
+                1,
+                parseFloat(spawnedEmote.el.style.opacity) + 0.1
+            );
+        }
+    }
+
+    requestAnimationFrame(updateEmotes);
+}
+updateEmotes();
+
+// #endregion
+// ------------------------------------------------------------------------------------------------
