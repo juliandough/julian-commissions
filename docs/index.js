@@ -256,7 +256,7 @@ let melonFilenames = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => "melon" + x + ".
 function pluckRandomMelon() {
     const i = Math.floor(Math.random() * melonFilenames.length);
     const melonFilename = melonFilenames[i];
-    melonFilenames = melonFilenames.filter((x) => x !== melonFilename);
+    melonFilenames.splice(i, 1);
     return melonFilename;
 }
 
@@ -723,10 +723,20 @@ setInterval(() => {
 
 function handleOpenCommissionDetails() {
     handleOpenDialog("detail-popover");
+    // Set the "commission-details" query param to "1":
+    window.history.replaceState({}, "", "?commission-details=1");
 }
 
 function handleCloseCommissionDetails() {
     handleCloseDialog("detail-popover");
+    // Remove the "commission-details" query param:
+    window.history.replaceState({}, "", window.location.pathname);
+}
+
+const initUrlSearch = new URLSearchParams(window.location.search);
+const hasCommissionDetails = initUrlSearch.has("commission-details");
+if (hasCommissionDetails) {
+    handleOpenCommissionDetails();
 }
 
 // #endregion
