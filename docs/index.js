@@ -134,6 +134,7 @@ function handleGalleryDialogStartCommission() {
 
     setCharacterStyle(selectedGalleryItem.config.style);
     setCharacterHeight(price.height);
+    updateCalculatorResults();
 
     window.location.replace("#commission");
 }
