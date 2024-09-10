@@ -43,9 +43,9 @@ const galleryItems = [
         config: { index: 1, style: "shaded" },
     },
     {
-        filename: "GN14mXZWYAANfti.jpg",
-        name: "Cool art",
-        config: { index: 2, style: "color" },
+        filename: "8BC8BE12-196A-49B7-9A80-81D4CCE2C214.jpg",
+        name: "klonoa",
+        config: { index: 1, style: "color" },
     },
     {
         filename: "GOP2Lc-WoAAwmsr.jpg",
