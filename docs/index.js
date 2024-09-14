@@ -249,7 +249,7 @@ document.addEventListener("scroll", (e) => {
 // #region Melonverse (tm)
 
 // Load in random melons for the melon images.
-let melonFilenames = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => "melon" + x + ".png");
+let melonFilenames = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((x) => "melon" + x + ".png");
 
 /**
  * Picks a random melon from the list, removes it from the list, and returns it.
