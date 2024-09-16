@@ -1534,6 +1534,11 @@ dialog.detailDialog {
     user-select: none;
 }
 
+.brushFast {
+    --brush-speed: 0.25s;
+    --brush-base-delay: 0.1s;
+}
+
 .brush::after {
     content: "";
     display: inline-block;
