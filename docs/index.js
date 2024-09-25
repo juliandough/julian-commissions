@@ -365,7 +365,7 @@ const characterPricings = [
         name: "Half-body",
         description: "The upper body of your character up to waist, including arms",
         height: 50,
-        price: 30,
+        price: 25,
     },
     {
         name: "Full-body",
