@@ -1,6 +1,6 @@
 const commissionsOpen = true;
-const commissionSlotsTaken = 2;
-const commissionSlots = 2;
+const commissionSlotsTaken = 4;
+const commissionSlots = 5;
 
 // ------------------------------------------------------------------------------------------------
 // #region Commission Slots
