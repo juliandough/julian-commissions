@@ -32,55 +32,60 @@ updateCommissionSlots();
 // #endregion
 // ------------------------------------------------------------------------------------------------
 
-/** @typedef {{filename:string,name:string,config:{index:number,style:CharacterStyle}}} GalleryItem */
+/** @typedef {{filename:string,name:string,config:{index:number,style:CharacterStyle}|'emote'|'something'}} GalleryItem */
 
 // Image files from the img/gallery folder:
 /** @type {GalleryItem[]} */
 const galleryItems = [
     {
-        filename: "1CB975A6-78C7-4D1F-B4D0-32A0B6E8573B.jpg",
-        name: "Awesome art",
-        config: { index: 1, style: "shaded" },
-    },
-    {
-        filename: "8BC8BE12-196A-49B7-9A80-81D4CCE2C214.jpg",
-        name: "klonoa",
-        config: { index: 1, style: "color" },
-    },
-    {
-        filename: "GOP2Lc-WoAAwmsr.jpg",
-        name: "Nice art",
-        config: { index: 1, style: "color" },
-    },
-    {
-        filename: "GSlYiPPXEAI8rwB.jpg",
-        name: "Von He's so me",
-        config: { index: 1, style: "color" },
-    },
-    {
-        filename: "GT4SRNlXQAABYHv.jpg",
-        name: "Amazing art",
-        config: { index: 3, style: "color" },
-    },
-    {
         filename: "GTPJ1eoW4AAZe5S.jpg",
-        name: "Incredible art",
+        name: "Character from my comic",
         config: { index: 2, style: "bw" },
     },
     {
-        filename: "moments.jpg",
-        name: "Memories",
-        config: { index: 2, style: "color" },
+        filename: "cosmo_badge.jpg",
+        name: "Cosmo (digital art for badge)",
+        config: { index: 1, style: "shaded" },
     },
     {
-        filename: "GLy9_kKW0AA9DEI.jpg",
-        name: "Art",
+        filename: "fennix.jpg",
+        name: "Fennix (from Fortnite™)",
         config: { index: 2, style: "shaded" },
     },
     {
-        filename: "FFD2C659-9A2F-4EDB-9ECB-A54E1EDE5D3D.png",
-        name: "Art",
+        filename: "ddom_comic.jpg",
+        name: "Comic Panel featuring DDOM",
+        config: "something",
+    },
+    {
+        filename: "jade.jpg",
+        name: "Jade the Dragon",
+        config: { index: 1, style: "color" },
+    },
+    {
+        filename: "klonoa.jpg",
+        name: "Klonoa (from Klonoa™)",
+        config: { index: 0, style: "shaded" },
+    },
+    {
+        filename: "von_lycaon.jpg",
+        name: "Von Lycaon (from Zenless Zone Zero™)",
+        config: "emote",
+    },
+    {
+        filename: "exo.jpg",
+        name: "Exo (original character)",
+        config: { index: 2, style: "shaded" },
+    },
+    {
+        filename: "GN14mXZWYAANfti.jpg",
+        name: "Alternate Art of my Sona",
         config: { index: 2, style: "color" },
+    },
+    {
+        filename: "kylo_tailwag.gif",
+        name: "Kylobyte Tailwag Emote",
+        config: "emote",
     },
 ];
 /** @type {GalleryItem|null} */
@@ -127,11 +132,25 @@ function handleGalleryDialogStartCommission() {
         return;
     }
 
+    if (selectedGalleryItem.config === "emote") {
+        setCommissionContext("emotes");
+        updateCalculatorResults();
+        window.location.replace("#commission");
+        return;
+    }
+    if (selectedGalleryItem.config === "something") {
+        setCommissionContext("something");
+        updateCalculatorResults();
+        window.location.replace("#commission");
+        return;
+    }
+
     const price = characterPricings[selectedGalleryItem.config.index];
     if (!price) {
         return;
     }
 
+    setCommissionContext("character");
     setCharacterStyle(selectedGalleryItem.config.style);
     setCharacterHeight(price.height);
     updateCalculatorResults();
