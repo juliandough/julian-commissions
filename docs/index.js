@@ -1,5 +1,5 @@
 const commissionsOpen = true;
-const commissionSlotsTaken = 5;
+const commissionSlotsTaken = 4;
 const commissionSlots = 5;
 
 // ------------------------------------------------------------------------------------------------
