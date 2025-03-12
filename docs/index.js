@@ -1,6 +1,6 @@
-const commissionsOpen = true;
-const commissionSlotsTaken = 4;
-const commissionSlots = 5;
+const commissionsOpen = true;  
+const commissionSlotsTaken = 4;   //julian add the slots
+const commissionSlots = 5;        //julian how many slots available 
 
 // ------------------------------------------------------------------------------------------------
 // #region Commission Slots
@@ -36,11 +36,11 @@ updateCommissionSlots();
 
 // Image files from the img/gallery folder:
 /** @type {GalleryItem[]} */
-const galleryItems = [
+const galleryItems = [                    //This is where the gallery starts,  if you want to add another image put {}, 
     {
-        filename: "GTPJ1eoW4AAZe5S.jpg",
-        name: "Character from my comic",
-        config: { index: 2, style: "bw" },
+        filename: "GTPJ1eoW4AAZe5S.jpg",    //The image file name
+        name: "Character from my comic",    //This is the display name that will show below the image
+        config: { index: 2, style: "bw" },  // index = 0=head, 1=bust, 2=half, 3=full    style = bw, shaded, color
     },
     {
         filename: "cosmo_badge.jpg",
@@ -55,7 +55,7 @@ const galleryItems = [
     {
         filename: "ddom_comic.jpg",
         name: "Comic Panel featuring DDOM",
-        config: "something",
+        config: "something",                // something is the option of the third option
     },
     {
         filename: "jade.jpg",
@@ -70,7 +70,7 @@ const galleryItems = [
     {
         filename: "von_lycaon.jpg",
         name: "Von Lycaon (from Zenless Zone Zero™)",
-        config: "emote",
+        config: "emote",                    // this will go to the emote
     },
     {
         filename: "exo.jpg",
@@ -78,9 +78,9 @@ const galleryItems = [
         config: { index: 2, style: "shaded" },
     },
     {
-        filename: "GN14mXZWYAANfti.jpg",
-        name: "Alternate Art of my Sona",
-        config: { index: 2, style: "color" },
+        filename: "A92F9DF5-F53B-4A55-8851-E60916286D3F.png",
+        name: "My bunny OC",
+        config: { index: 1, style: "shaded" },
     },
     {
         filename: "kylo_tailwag.gif",
