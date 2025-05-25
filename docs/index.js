@@ -1,6 +1,6 @@
-const commissionsOpen = true;  
-const commissionSlotsTaken = 4;   //julian add the slots
-const commissionSlots = 5;        //julian how many slots available 
+const commissionsOpen = true;
+const commissionSlotsTaken = 4; //julian add the slots
+const commissionSlots = 5; //julian how many slots available
 
 // ------------------------------------------------------------------------------------------------
 // #region Commission Slots
@@ -36,11 +36,12 @@ updateCommissionSlots();
 
 // Image files from the img/gallery folder:
 /** @type {GalleryItem[]} */
-const galleryItems = [                    //This is where the gallery starts,  if you want to add another image put {}, 
+const galleryItems = [
+    //This is where the gallery starts,  if you want to add another image put {},
     {
-        filename: "GTPJ1eoW4AAZe5S.jpg",    //The image file name
-        name: "Character from my comic",    //This is the display name that will show below the image
-        config: { index: 2, style: "bw" },  // index = 0=head, 1=bust, 2=half, 3=full    style = bw, shaded, color
+        filename: "GTPJ1eoW4AAZe5S.jpg", //The image file name
+        name: "Character from my comic", //This is the display name that will show below the image
+        config: { index: 2, style: "bw" }, // index = 0=head, 1=bust, 2=half, 3=full    style = bw, shaded, color
     },
     {
         filename: "cosmo_badge.jpg",
@@ -55,7 +56,7 @@ const galleryItems = [                    //This is where the gallery starts,  i
     {
         filename: "ddom_comic.jpg",
         name: "Comic Panel featuring DDOM",
-        config: "something",                // something is the option of the third option
+        config: "something", // something is the option of the third option
     },
     {
         filename: "jade.jpg",
@@ -70,7 +71,7 @@ const galleryItems = [                    //This is where the gallery starts,  i
     {
         filename: "von_lycaon.jpg",
         name: "Von Lycaon (from Zenless Zone Zero™)",
-        config: "emote",                    // this will go to the emote
+        config: "emote", // this will go to the emote
     },
     {
         filename: "exo.jpg",
@@ -186,6 +187,7 @@ for (const hiddenBrushContainer of hiddenBrushContainers) {
 const emoteContainerEl = document.getElementById("scrollingEmoteContainer");
 const emoteFilenames = [
     "1254323429692280873.png",
+    "1239482247241793596.png",
     "1239592043928485920.png",
     "1242180587029270619.png",
     "1242180696009605294.png",
@@ -197,6 +199,12 @@ const emoteFilenames = [
     "1257938134012919880.png",
     "1262669189697634315.png",
     "1263601914088652863.png",
+    "1279662840680157216.png",
+    "1343675307617550366.png",
+    "1354516236041715843.png",
+    "1354619111396606092.png",
+    "1358117735183159337.png",
+    "1358117857971671371.png",
 ];
 
 for (let i = 0; i < 8; i++) {
@@ -268,7 +276,9 @@ document.addEventListener("scroll", (e) => {
 // #region Melonverse (tm)
 
 // Load in random melons for the melon images.
-let melonFilenames = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((x) => "melon" + x + ".png");
+let melonFilenames = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(
+    (x) => "melon" + x + ".png"
+);
 
 /**
  * Picks a random melon from the list, removes it from the list, and returns it.

@@ -36,7 +36,7 @@
 
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
         />
         <link rel="stylesheet" href="style.css" />
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -90,12 +90,50 @@
                             <i class="bi bi-discord"></i>
                         </a>
                         <a
+                            data-tooltip-text="Follow me on Bluesky"
+                            href="https://bsky.app/profile/juliandoes.art"
+                            ref="noopener noreferrer nofollow"
+                            target="_blank"
+                        >
+                            <i class="bi bi-bluesky"></i>
+                        </a>
+                        <a
                             data-tooltip-text="Follow & DM me on Twitter"
                             href="https://twitter.com/juliandough"
                             ref="noopener noreferrer nofollow"
                             target="_blank"
                         >
                             <i class="bi bi-twitter"></i>
+                        </a>
+                        <a
+                            data-tooltip-text="Follow me on Instagram"
+                            href="https://www.instagram.com/juliandough_art/"
+                            ref="noopener noreferrer nofollow"
+                            target="_blank"
+                        >
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a
+                            data-tooltip-text="Follow me on Reddit"
+                            href="https://www.reddit.com/user/JulianDough/?sort=top"
+                            ref="noopener noreferrer nofollow"
+                            target="_blank"
+                        >
+                            <i class="bi bi-reddit"></i>
+                        </a>
+                        <a
+                            data-tooltip-text="View my gallery on Fur Affinity"
+                            href="https://www.furaffinity.net/user/juliandough"
+                            ref="noopener noreferrer nofollow"
+                            target="_blank"
+                        >
+                            <img
+                                src="img/icons/furaffinity.svg"
+                                alt="FurAffinity icon"
+                                width="36px"
+                                height="36px"
+                                class="bi"
+                            />
                         </a>
                         <a
                             data-tooltip-text="Commission Queue"
@@ -177,6 +215,18 @@
                 <h2 id="gallery">Gallery</h2>
 
                 <div class="gallery" id="gallery-container"></div>
+                <div style="float: right">
+                    <small>
+                        View more on my
+                        <a
+                            href="https://www.furaffinity.net/user/juliandough"
+                            ref="noopener noreferrer nofollow"
+                            target="_blank"
+                        >
+                            Fur Affinity</a
+                        >.
+                    </small>
+                </div>
 
                 <dialog popover="manual" id="gallery-popover" class="galleryDialog">
                     <div class="galleryDialogBody">

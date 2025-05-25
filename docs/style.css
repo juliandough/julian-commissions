@@ -568,6 +568,7 @@ header li a:focus span {
 .socialIcons {
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .socialIcons > a {
@@ -588,7 +589,8 @@ header li a:focus span {
     color: var(--accent-color);
 }
 
-.socialIcons > a:hover > i {
+.socialIcons > a:hover > i,
+.socialIcons > a:hover > img {
     display: inline-block;
 
     animation-name: bounce-anim;
