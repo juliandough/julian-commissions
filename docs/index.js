@@ -1,5 +1,5 @@
 const commissionsOpen = true;
-const commissionSlotsTaken = 4; //julian add the slots
+const commissionSlotsTaken = 3; //julian add the slots
 const commissionSlots = 5; //julian how many slots available
 
 // ------------------------------------------------------------------------------------------------
