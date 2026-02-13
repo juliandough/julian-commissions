@@ -172,7 +172,7 @@ const observer = new IntersectionObserver(
             el.classList.remove("brushContainerHidden");
         }
     },
-    { threshold: 0.65 }
+    { threshold: 0.65 },
 );
 
 const hiddenBrushContainers = document.getElementsByClassName("brushContainerHidden");
@@ -277,7 +277,7 @@ document.addEventListener("scroll", (e) => {
 
 // Load in random melons for the melon images.
 let melonFilenames = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(
-    (x) => "melon" + x + ".png"
+    (x) => "melon" + x + ".png",
 );
 
 /**
@@ -382,25 +382,25 @@ const characterPricings = [
         name: "Headshot",
         description: "A headshot of your character, potentially with neck/collar",
         height: 23,
-        price: 15,
+        price: 25,
     },
     {
         name: "Bust",
         description: "A bust of your character, including shirt collar and shoulders",
         height: 30,
-        price: 20,
+        price: 35,
     },
     {
         name: "Half-body",
         description: "The upper body of your character up to waist, including arms",
         height: 50,
-        price: 25,
+        price: 45,
     },
     {
         name: "Full-body",
         description: "A full-body of your character from head to toe",
         height: 100,
-        price: 35,
+        price: 55,
     },
 ];
 const characterSurcharges = {
@@ -669,7 +669,7 @@ function updateCalculatorResultsCharacter() {
 }
 
 function updateCalculatorResultsEmotes() {
-    let price = emoteCount * 8;
+    let price = emoteCount * 10;
 
     const melonTaxEl = document.getElementById("emotes-melon-tax");
     price += melonTaxEl.checked ? 2 : 0;
@@ -932,7 +932,7 @@ function updateEmotes() {
         if (spawnedEmote.ttl > 0) {
             spawnedEmote.el.style.opacity = Math.min(
                 1,
-                parseFloat(spawnedEmote.el.style.opacity) + 0.1
+                parseFloat(spawnedEmote.el.style.opacity) + 0.1,
             );
         }
     }
